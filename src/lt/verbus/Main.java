@@ -12,12 +12,18 @@ public class Main {
 
         System.out.println("This is calculator. Enter number1, operator (+,-,*,/) number2");
         numberA = input.nextInt();
-        operator = input.next().toCharArray()[1];
+        operator = input.next().toCharArray()[0];
         numberB = input.nextInt();
         System.out.println(count(numberA, operator, numberB));
     }
 
     public static int count(int numberA, char operator, int numberB) {
-        return 0;
+        switch (operator) {
+            case '+': return numberA+numberB;
+            case '-': return numberA-numberB;
+            case '*': return numberA*numberB;
+            case '/': return numberA/numberB;
+            default : throw new IllegalArgumentException();
+        }
     }
 }
